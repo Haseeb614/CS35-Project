@@ -1,6 +1,11 @@
 # CS-250 Semester Project Plan (Domain B: Citation Network)
 
-**Roles:** A = Storage, B = Validation + Hash, C = Smart feature, D = Graph + data, E = Test + integration
+**Team Assignments & Roles:**
+- **Nouman (A):** Storage (Linked List & Loader) — Branch: `a-list`
+- **Aarish (B):** Validation & Hash Table — Branch: `b-hash`
+- **Khizar (C):** Smart Feature (Ranking / Max-Heap) — Branch: `c-feature`
+- **Ahsan (D):** Graph & Datasets (BFS / DFS) — Branch: `d-graph`
+- **Haseeb (E):** Tests, Integration & Build / Report Lead — Branch: `e-tests`
 
 **Git words used in the table**
 - **PULL** = `git checkout <your-branch>` then `git pull origin main`, so your branch gets everyone's merged work.
