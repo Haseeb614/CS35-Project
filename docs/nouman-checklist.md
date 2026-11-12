@@ -5,4 +5,4 @@
 - [x] No STL containers; fixed `char title[256]`
 - [x] Duplicates allowed at list layer; validator owns uniqueness
 - [x] Assert tests in `tests/test_list.cpp`
-- [ ] Copy into team repo when GitHub App / push access works
+- [x] Copy into team fork (`mshakeelbsai25seecs-star/CS35-Project`) via PR #1
