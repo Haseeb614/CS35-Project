@@ -1,0 +1,8 @@
+id,title,year,citations
+101,Foundations of Deep Learning,2015,500
+102,Convolutional Neural Networks for Vision,2016,350
+101,Duplicate Entry for Foundations,2017,120
+103,Attention Mechanism in Sequence Models,2017,800
+104,Generative Adversarial Modeling,2018,400
+105,Graph Neural Networks Overview,2019,250
+104,Duplicate Entry for GANs,2020,95
