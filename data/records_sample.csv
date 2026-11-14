@@ -1,0 +1,21 @@
+id,title,year,citations
+1,Foundations of Graph Search,2005,320
+2,Efficient Hashing Methods,2006,280
+3,Linked Structures in Practice,2007,240
+4,Sorting at Scale,2008,260
+5,Heap Based Ranking,2009,190
+6,Shortest Path Algorithms,2010,210
+7,Indexing Large Collections,2011,170
+8,Citation Network Analysis,2012,150
+9,Memory Safe Containers,2013,95
+10,Cache Friendly Lists,2014,80
+11,Parallel Graph Traversal,2015,120
+12,Hash Collision Strategies,2016,70
+13,Priority Queue Variants,2017,60
+14,Ranking Scientific Papers,2018,85
+15,Scalable Path Queries,2019,40
+16,Validation of Data Streams,2020,25
+17,Compact Adjacency Storage,2021,18
+18,Detecting Duplicate Records,2022,12
+19,Benchmarking Data Structures,2023,6
+20,Teaching Algorithms Visually,2024,0
