@@ -70,3 +70,6 @@ Testing/
 data/gen_*
 
 data/gen_*
+
+# Local task tracking
+Work.txt
