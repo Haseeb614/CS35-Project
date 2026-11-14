@@ -2,7 +2,9 @@
 #include "list.h"
 #include "test_utils.h"
 
+// ---------------------------------------------------------------------------
 // Week 10: 5 hand-made records, check the order.
+// ---------------------------------------------------------------------------
 void testFiveHandMadeRecordsHeap() {
   Paper papers[5] = {
     {1, "Paper A", 2020, 15},
@@ -77,9 +79,82 @@ void testFiveHandMadeRecordsMergeSort() {
   CHECK(ptrs[4]->data.citation_count == 5, "MergeSort 5th is 5");
 }
 
+// ---------------------------------------------------------------------------
+// Week 11: Real List API Integration (walk list, insert nodes, test on hand-built list)
+// ---------------------------------------------------------------------------
+void testRealListHeapIntegration() {
+  PaperList* list = list_create();
+  CHECK(list != nullptr, "Created real PaperList");
+
+  Paper p1 = {10, "Intro to AI", 2015, 80};
+  Paper p2 = {20, "Deep Learning", 2017, 300};
+  Paper p3 = {30, "Transformers", 2020, 1500};
+  Paper p4 = {40, "Reinforcement Learning", 2019, 450};
+
+  // Insert nodes using Component A's real list API
+  list_insert_front(list, p1);
+  list_insert_front(list, p2);
+  list_insert_front(list, p3);
+  list_insert_front(list, p4);
+
+  CHECK(list_size(list) == 4, "PaperList has 4 elements");
+
+  // Build heap by walking real list
+  PaperHeap* heap = buildHeapFromList(list);
+  CHECK(heap != nullptr, "Heap successfully built from real PaperList");
+  CHECK(heapSize(heap) == 4, "Heap contains all 4 nodes from list");
+
+  // Verify extraction order: 1500 -> 450 -> 300 -> 80
+  PaperNode* top1 = extractMax(heap);
+  CHECK(top1 != nullptr && top1->data.citation_count == 1500, "1st extraction is Transformers (1500)");
+
+  PaperNode* top2 = extractMax(heap);
+  CHECK(top2 != nullptr && top2->data.citation_count == 450, "2nd extraction is RL (450)");
+
+  PaperNode* top3 = extractMax(heap);
+  CHECK(top3 != nullptr && top3->data.citation_count == 300, "3rd extraction is DL (300)");
+
+  PaperNode* top4 = extractMax(heap);
+  CHECK(top4 != nullptr && top4->data.citation_count == 80, "4th extraction is AI (80)");
+
+  CHECK(heapSize(heap) == 0, "Heap exhausted");
+
+  heapFree(heap);
+  list_destroy(list);
+}
+
+void testRealListEmptyAndSingleNode() {
+  // Empty list
+  PaperList* emptyList = list_create();
+  PaperHeap* emptyHeap = buildHeapFromList(emptyList);
+  CHECK(emptyHeap != nullptr, "buildHeapFromList on empty list returns valid heap");
+  CHECK(heapSize(emptyHeap) == 0, "Heap from empty list has size 0");
+  CHECK(extractMax(emptyHeap) == nullptr, "Extracting from empty list heap gives nullptr");
+  heapFree(emptyHeap);
+  list_destroy(emptyList);
+
+  // Single node list
+  PaperList* singleList = list_create();
+  Paper solo = {1, "Solo Paper", 2022, 42};
+  list_insert_front(singleList, solo);
+
+  PaperHeap* singleHeap = buildHeapFromList(singleList);
+  CHECK(singleHeap != nullptr, "Single node list heap created");
+  CHECK(heapSize(singleHeap) == 1, "Single node heap size is 1");
+
+  PaperNode* node = extractMax(singleHeap);
+  CHECK(node != nullptr && node->data.id == 1 && node->data.citation_count == 42, "Extracted solo node correctly");
+  CHECK(heapSize(singleHeap) == 0, "Heap empty after extracting single node");
+
+  heapFree(singleHeap);
+  list_destroy(singleList);
+}
+
 int main() {
-  cout << "--- Running Component C (Week 10) Tests ---" << endl;
+  cout << "=== Running Component C (Khizar - Week 10 & 11) Tests ===" << endl;
   testFiveHandMadeRecordsHeap();
   testFiveHandMadeRecordsMergeSort();
+  testRealListHeapIntegration();
+  testRealListEmptyAndSingleNode();
   TEST_SUMMARY();
 }

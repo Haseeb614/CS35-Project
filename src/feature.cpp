@@ -108,6 +108,24 @@ int heapSize(const PaperHeap* heap) {
   return heap ? heap->size : 0;
 }
 
+PaperHeap* buildHeapFromList(PaperList* list) {
+  if (!list) return nullptr;
+  int n = list_size(list);
+  if (n <= 0) n = 16;
+
+  PaperHeap* heap = heapCreate(n);
+  if (!heap) return nullptr;
+
+  for (PaperNode* cur = list_head(list); cur != nullptr; cur = cur->next) {
+    if (!heapInsert(heap, cur)) {
+      heapFree(heap);
+      return nullptr;
+    }
+  }
+
+  return heap;
+}
+
 // Merge sort implementation
 namespace {
 void merge(PaperNode** arr, PaperNode** tmp, int left, int mid, int right) {
