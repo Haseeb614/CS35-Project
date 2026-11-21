@@ -1,0 +1,37 @@
+id,title,year,citations
+1,Introduction to Algorithm Analysis,2000,410
+2,Balanced Search Trees Revisited,2000,355
+3,Hash Table Design Principles,2001,390
+4,Linked List Memory Models,2001,150
+5,Graph Traversal Fundamentals,2002,375
+6,Priority Queues in Practice,2003,300
+7,External Sorting Methods,2003,220
+8,Shortest Path Heuristics,2004,340
+9,Amortized Analysis Techniques,2005,265
+10,Dynamic Array Growth Policies,2005,140
+11,Open Addressing Probing Schemes,2006,200
+12,Cache Aware Data Layouts,2007,185
+13,Heap Construction Bounds,2008,230
+14,Scalable Graph Storage,2008,175
+15,Bibliometric Ranking Models,2009,160
+16,Citation Count Distributions,2010,245
+17,Parallel Breadth First Search,2011,210
+18,Memory Pool Allocators,2011,95
+19,Randomized Hashing Families,2012,135
+20,Topological Ordering Applications,2013,120
+21,Citation Graph Sampling,2014,110
+22,Lock Free Queues,2014,70
+23,Community Detection in Networks,2015,155
+24,Top K Query Processing,2016,100
+25,Incremental Shortest Paths,2016,85
+26,Stack Based Traversal Methods,2017,60
+27,Duplicate Detection at Scale,2018,75
+28,Data Validation Pipelines,2019,50
+29,Hash Index Benchmarks,2020,45
+30,Graph Reachability Indexes,2020,55
+31,Teaching Data Structures Online,2021,20
+32,Heap versus Sort Tradeoffs,2022,30
+33,Cycle Detection in Citation Data,2022,15
+34,Visualizing Research Networks,2023,0
+35,Student Friendly Algorithm Labs,2024,0
+36,Revisiting Weighted Citation Paths,2024,0
